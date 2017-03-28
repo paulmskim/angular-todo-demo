@@ -1,0 +1,16 @@
+<li
+  ng-class="$ctrl.todoClass"
+>
+  <p
+    ng-class="$ctrl.todoTextClass"
+    ng-click="$ctrl.onTodoClick({ id: $ctrl.todoId })"
+  >
+    {{$ctrl.text}}
+  </p>
+  <span
+    ng-class="$ctrl.todoDeleteClass"
+    ng-click="$ctrl.onTodoDelete({ id: $ctrl.todoId })"
+  >
+    ×
+  </span>
+</li>

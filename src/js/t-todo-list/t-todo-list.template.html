@@ -1,0 +1,11 @@
+<ul class="todo-list">
+  <t-todo
+    ng-repeat="todo in $ctrl.todos"
+    todo-id="todo.id"
+    text="todo.text"
+    completed="todo.completed"
+    on-todo-click="$parent.$ctrl.onTodoClick({ id: id })"
+    on-todo-delete="$parent.$ctrl.onTodoDelete({ id: id })"
+  >
+  </t-todo>
+</ul>

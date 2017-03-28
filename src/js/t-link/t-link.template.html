@@ -1,0 +1,15 @@
+<span
+  ng-if="$ctrl.active"
+  ng-class="$ctrl.linkClass"
+>
+  {{$ctrl.filter}}
+</span>
+
+<a
+  href="#"
+  ng-if="!$ctrl.active"
+  ng-click="$ctrl.onClick({ event: $event })"
+  ng-class="$ctrl.linkClass"
+>
+  {{$ctrl.filter}}
+</a>
