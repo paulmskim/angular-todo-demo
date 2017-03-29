@@ -1,8 +1,6 @@
 export default class tLinkContainerController {
-  constructor(tVisibilityFilter, $q, $scope, $rootScope) {
+  constructor(tVisibilityFilter, $scope) {
     this.tVisibilityFilter = tVisibilityFilter;
-    this.q = $q;
-    this.rootScope = $rootScope;
     this.initVisibilityFilter();
     this.setVisibilityFilterChangeListener($scope);
   }

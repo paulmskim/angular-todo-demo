@@ -1,8 +1,6 @@
 export default class tAddTodoContainerController {
-  constructor(tTodos, $q, $rootScope) {
+  constructor(tTodos) {
     this.tTodos = tTodos;
-    this.q = $q;
-    this.rootScope = $rootScope;
     this.input = '';
   }
 

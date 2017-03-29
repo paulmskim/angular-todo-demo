@@ -12,8 +12,6 @@ export default angular
     template: tAddTodoContainerTemplate,
     controller: [
       'tTodos',
-      '$q',
-      '$rootScope',
       tAddTodoContainerController,
     ],
   });

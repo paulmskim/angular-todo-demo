@@ -15,9 +15,7 @@ export default angular
     },
     controller: [
       'tVisibilityFilter',
-      '$q',
       '$scope',
-      '$rootScope',
       tLinkContainerController,
     ],
   });
