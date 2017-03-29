@@ -58,7 +58,7 @@ app.put('/api/visibilityFilter', function (req, res) {
 
         fs.writeFile(
           path.resolve(__dirname, 'api', 'visibility-filter.json'),
-          JSON.stringify(updatedJsonData),
+          JSON.stringify(updatedJsonData, null, 2),
           'utf-8',
           function (writeErr) {
             if (writeErr) {
@@ -130,7 +130,7 @@ function handlePost(req, res, dataName) {
 
         fs.writeFile(
           path.resolve(__dirname, 'api', dataName + 's.json'),
-          JSON.stringify(newJsonData),
+          JSON.stringify(newJsonData, null, 2),
           'utf-8',
           function (writeErr) {
             if (writeErr) {
@@ -194,7 +194,7 @@ function handlePut(req, res, dataName) {
 
         fs.writeFile(
           path.resolve(__dirname, 'api', dataName + 's.json'),
-          JSON.stringify(updatedJsonData),
+          JSON.stringify(updatedJsonData, null, 2),
           'utf-8',
           function (writeErr) {
             if (writeErr) {
@@ -245,7 +245,7 @@ function handleDelete(req, res, dataName) {
 
         fs.writeFile(
           path.resolve(__dirname, 'api', dataName + 's.json'),
-          JSON.stringify(filteredJsonData),
+          JSON.stringify(filteredJsonData, null, 2),
           'utf-8',
           function (writeErr) {
             if (writeErr) {

@@ -1,1 +1,20 @@
-{"todos":[{"id":1,"text":"A todo list demo made with AngularJS","completed":false},{"id":2,"text":"Click on the text to complete a todo","completed":true},{"id":3,"text":"Click on the x to delete a todo","completed":false}],"latestId":3}
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "A todo list demo made with AngularJS",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "Click on the text to complete a todo",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "text": "Click on the x to delete a todo",
+      "completed": false
+    }
+  ],
+  "latestId": 3
+}
