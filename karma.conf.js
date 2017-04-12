@@ -15,9 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      // 'node_modules/angular/angular.min.js',
-      // 'node_modules/angular-mocks/angular-mocks.js',
-      'test/unit/test.js'
+      'test/unit/test.js',
+      'src/js/**/*.js'
     ],
 
 
@@ -29,7 +28,15 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/js/**/*.js': ['webpack'],
       'test/unit/test.js': ['webpack']
+    },
+
+    coverageReporter: {
+      instrumenters: { isparta : require('isparta') },
+      instrumenter: {
+        '**/*.js': 'isparta'
+      },
     },
 
     webpack: {
@@ -37,7 +44,10 @@ module.exports = function(config) {
         rules: [
           {
             test: /\.js?$/,
-            exclude: /node_modules/,
+            exclude: [
+              /node_modules/,
+              /src/,
+            ],
             use: [
               {
                 loader: 'babel-loader',
@@ -45,6 +55,17 @@ module.exports = function(config) {
                   presets: ['es2015'],
                   plugins: ['transform-object-rest-spread'],
                 }
+              }
+            ]
+          }, {
+            test: /\.js?$/,
+            exclude: [
+              /node_modules/,
+              /test/,
+            ],
+            use: [
+              {
+                loader: 'isparta-loader'
               }
             ]
           }, {
@@ -68,7 +89,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
 
 
     // web server port
